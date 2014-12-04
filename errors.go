@@ -1,8 +1,8 @@
 package main
 
-import {
-	"fmt"
+import (
 	"bufio"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -10,10 +10,10 @@ import {
 	"path/filepath"
 	"regexp"
 	"strings"
-}
+)
 
 // the Go way to handle errors is to have the function/method return an error value as their sole or last return value,
-// or nil if no error occured, and for receivers to always check the error they receive. 
+// or nil if no error occured, and for receivers to always check the error they receive.
 
 // functions can also return named variables. These return variables are set to their zero values when the function is entered,
 // and keep their zero values unless explicitly assigned to in the body of the function.
@@ -41,7 +41,7 @@ func main() {
 			log.Fatal(err)
 		}
 		// leave the file open to work on, but close it as soon as the enclosing function, in this case main(), returns, thereby ensuring
-		// that the file is closed when the program is done with it 
+		// that the file is closed when the program is done with it
 		defer outFile.Close()
 	}
 	if err = americanise(inFile, outFile); err != nil {
@@ -50,7 +50,7 @@ func main() {
 }
 
 func filenamesFromCommandLine() (inFilename, outFilename string, err error) {
-	if len (os.Args) > 1 && (os.Args[1] == "-h" || os.Args[1] == "--help") {
+	if len(os.Args) > 1 && (os.Args[1] == "-h" || os.Args[1] == "--help") {
 		err = fmt.Errorf("usage: %s [<]infile.txt [>]outfile.txt",
 			filepath.Base(os.Args[0]))
 		return "", "", err
@@ -65,16 +65,9 @@ func filenamesFromCommandLine() (inFilename, outFilename string, err error) {
 		log.Fatal("won't overwrite the infile")
 	}
 
-	// if all goes well, return two strings and an error value of nil 
+	// if all goes well, return two strings and an error value of nil
 	return inFilename, outFilename, nil
 }
 
-// for a value to be readable it must satisfy the io.Reader interface, and for it to be writeable it must satisfy the io.Writer interface. 
+// for a value to be readable it must satisfy the io.Reader interface, and for it to be writeable it must satisfy the io.Writer interface.
 // the bufio package provides buffered input/output
-
- 
-
-
-
-
-

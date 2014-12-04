@@ -76,6 +76,8 @@ func fibonacci() func() int {
 	}
 }
 
+// niladic functions are functions without input values. The init() function is such.
+
 // ********************** DEFER, PANIC, RECOVER *****************
 // the defer statement schedules a function call to be used after a function is complete
 // output is 1, then 2
@@ -94,3 +96,12 @@ func main2() {
 		fmt.Println(str)
 	}()
 }
+
+// a composite literal is an expression that creates a new value each time it is evaluated. E.g. creating a new struct:
+
+type testRectangle struct {
+	length int
+	width  int
+}
+
+var rect1 = testRectangle{10, 5}

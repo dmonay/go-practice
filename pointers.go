@@ -24,6 +24,6 @@ func zeroPointer(xPtr *int) {
 
 // the * operator is used to represent a pointer, followed by type of stored value
 // it's also used to dereference pointer variables - this gives us access to the VALUE
-// the pointer points to
+// the pointer points to. This is done on L22
 
 // the & operator refers to the address of a variable
