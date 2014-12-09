@@ -49,7 +49,7 @@ func appendSlice() {
 // other method is copy
 
 // use make() to initialize a slice:
-pow := make([]int, 10) // this allocates a zeroed array of length  10. To specify capacity, pass in a third argument
+var pow = make([]int, 10) // this allocates a zeroed array of length  10. To specify capacity, pass in a third argument
 // make is one of two allocation primitives
 
 // ************ MAPS/HASHES/DICTIONARIES *******************
